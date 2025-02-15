@@ -17,10 +17,12 @@ add_executable (hexWizardary "src/main.cpp" "include/HexEditor.hpp")
 find_package(imgui CONFIG REQUIRED)
 find_package(SDL2 CONFIG REQUIRED)
 find_package(SDL2_ttf CONFIG REQUIRED)
+find_package(fmt CONFIG REQUIRED)
 
 target_link_libraries(hexWizardary PRIVATE imgui::imgui)
 target_link_libraries(hexWizardary PRIVATE $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main> $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>)
 target_link_libraries(hexWizardary PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>)
+target_link_libraries(hexWizardary PRIVATE fmt::fmt)
 
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)

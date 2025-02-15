@@ -3,14 +3,6 @@
   "version-string": "1",
   "dependencies": [
     {
-      "name": "imgui",
-      "features": [
-        "sdl2-binding",
-        "sdl2-renderer-binding",
-        "docking-experimental"
-      ]
-    },
-    "sdl2",
-    "sdl2-ttf"
+    "qt"
   ]
 }

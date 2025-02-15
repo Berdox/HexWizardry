@@ -8,7 +8,9 @@
 
 class HexEditor {
     public:
-	    std::vector<unsigned char> hexData;
+	    std::vector<uint8_t> hexData;
+
+        HexEditor() {}
 
 	    void loadFile(const std::string filePath) {
             // Open file in binary mode
