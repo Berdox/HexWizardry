@@ -1,32 +1,106 @@
-﻿cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.5)
 
-set(vcpkg "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake")
-if(NOT CMAKE_TOOLCHAIN_FILE AND EXISTS "${vcpkg}")
-  set(CMAKE_TOOLCHAIN_FILE "${vcpkg}"
-      CACHE FILEPATH "CMake toolchain file")
-  message(STATUS "vcpkg toolchain found: ${CMAKE_TOOLCHAIN_FILE}")
+project(HexWizardry VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+
+# TS files
+set(TS_FILES HexWizardry_en_US.ts)
+
+# Source files
+set(SRC_FILES
+    src/main.cpp
+    src/hexEditor.cpp
+)
+
+# Header files
+set(HDR_FILES
+    include/hexEditor.hpp
+)
+
+# UI files
+set(UI_FILES
+    ui/include/MainWindow.hpp
+    ui/src/MainWindow.cpp
+
+    ui/include/HexModel.hpp
+    ui/src/HexModel.cpp
+
+    ui/include/HexView.hpp
+    ui/src/HexView.cpp
+)
+
+# Utilities files
+set(UTIL_FILES
+    utils/fileHander.hpp
+)
+
+set(PROJECT_SOURCES
+        ${SRC_FILES}
+        ${HDR_FILES}
+        ${UI_FILES}
+        ${UTIL_FILES}
+        ${TS_FILES}
+)
+
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(HexWizardry
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+    )
+# Define target properties for Android with Qt 6 as:
+#    set_property(TARGET HexWizardry APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+
+    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+else()
+    if(ANDROID)
+        add_library(HexWizardry SHARED
+            ${PROJECT_SOURCES}
+        )
+# Define properties for Android with Qt 5 after find_package() calls as:
+#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+    else()
+        add_executable(HexWizardry
+            ${PROJECT_SOURCES}
+        )
+    endif()
+
+    qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 endif()
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+target_link_libraries(HexWizardry PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
-project ("HexWizardry")
-
-# Add source to this project's executable.
-add_executable (hexWizardary "src/main.cpp" "include/HexEditor.hpp")
-
-find_package(imgui CONFIG REQUIRED)
-find_package(SDL2 CONFIG REQUIRED)
-find_package(SDL2_ttf CONFIG REQUIRED)
-find_package(fmt CONFIG REQUIRED)
-
-target_link_libraries(hexWizardary PRIVATE imgui::imgui)
-target_link_libraries(hexWizardary PRIVATE $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main> $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>)
-target_link_libraries(hexWizardary PRIVATE $<IF:$<TARGET_EXISTS:SDL2_ttf::SDL2_ttf>,SDL2_ttf::SDL2_ttf,SDL2_ttf::SDL2_ttf-static>)
-target_link_libraries(hexWizardary PRIVATE fmt::fmt)
-
-
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET hexWizardary PROPERTY CXX_STANDARD 23) 
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.HexWizardry)
 endif()
- 
-# TODO: Add tests and install targets if needed.
+set_target_properties(HexWizardry PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
+
+include(GNUInstallDirs)
+install(TARGETS HexWizardry
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(HexWizardry)
+endif()

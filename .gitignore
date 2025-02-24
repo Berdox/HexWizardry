@@ -1,47 +1,74 @@
-# Ignore build directories
-[Cc]makeBuild/
-[Cc]makeFiles/
-Build/
-build/
-out/
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
 
-# Ignore CMake-related files
-CMakeCache.txt
-CMakeFiles/
-CMakeLists.txt.user
-
-# Ignore vcpkg dependencies
-/vcpkg/*
-!vcpkg/installed/
-
-# Ignore Visual Studio user-specific files
-.vs/
-.vscode/
-.idea/
-
-# Ignore user-specific files
-*.user
-*.userosscache
-*.suo
-*.sln.docstates
-
-# Ignore build-related files
+*~
+*.autosave
+*.a
+*.core
+*.moc
+*.o
 *.obj
-*.pch
+*.orig
+*.rej
+*.so
+*.so.*
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+.directory
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+*.res
+*.rc
+/.qmake.cache
+/.qmake.stash
+
+# qtcreator generated files
+*.pro.user*
+CMakeLists.txt.user*
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
 *.idb
+*.ilk
 *.pdb
-*.opendb
-*.log
-*.bak
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+*.sdf
+*.opensdf
+*.vcxproj
+*vcxproj.*
 
-# Ignore dependency directories
-.vcpkg/
+# MinGW generated files
+*.Debug
+*.Release
 
-# Ignore generated files
-*.make
-*.cmake
-*.ninja
+# Python byte code
+*.pyc
 
-# Ignore other files
-*.swp
-*.swo
+# Binaries
+# --------
+*.dll
+*.exe
+

@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+d6fab15eacdffce8885cfd3593db40ff CMakeFiles/HexWizardry_autogen
+92510d72d9bfbbb53c2170cebe82ac32 HexWizardry_autogen/timestamp

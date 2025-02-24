@@ -1,0 +1,9 @@
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/HexWizardry.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/edit_cache.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/rebuild_cache.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/list_install_components.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/install.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/install/local.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/install/strip.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/HexWizardry_autogen_timestamp_deps.dir
+/home/hodc/Documents/code/c++/HexWizardry/build/CMakeFiles/HexWizardry_autogen.dir

@@ -1,8 +1,0 @@
-{
-  "name": "hexwizardry",
-  "version-string": "1",
-  "dependencies": [
-    {
-    "qt"
-  ]
-}

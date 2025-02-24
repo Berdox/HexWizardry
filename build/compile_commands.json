@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/hodc/Documents/code/c++/HexWizardry/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -g -std=gnu++17 -o CMakeFiles/HexWizardry.dir/HexWizardry_autogen/mocs_compilation.cpp.o -c /home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/mocs_compilation.cpp",
+  "file": "/home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/HexWizardry.dir/HexWizardry_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/hodc/Documents/code/c++/HexWizardry/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -g -std=gnu++17 -o CMakeFiles/HexWizardry.dir/src/main.cpp.o -c /home/hodc/Documents/code/c++/HexWizardry/src/main.cpp",
+  "file": "/home/hodc/Documents/code/c++/HexWizardry/src/main.cpp",
+  "output": "CMakeFiles/HexWizardry.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/hodc/Documents/code/c++/HexWizardry/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -g -std=gnu++17 -o CMakeFiles/HexWizardry.dir/src/hexEditor.cpp.o -c /home/hodc/Documents/code/c++/HexWizardry/src/hexEditor.cpp",
+  "file": "/home/hodc/Documents/code/c++/HexWizardry/src/hexEditor.cpp",
+  "output": "CMakeFiles/HexWizardry.dir/src/hexEditor.cpp.o"
+},
+{
+  "directory": "/home/hodc/Documents/code/c++/HexWizardry/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -g -std=gnu++17 -o CMakeFiles/HexWizardry.dir/ui/src/MainWindow.cpp.o -c /home/hodc/Documents/code/c++/HexWizardry/ui/src/MainWindow.cpp",
+  "file": "/home/hodc/Documents/code/c++/HexWizardry/ui/src/MainWindow.cpp",
+  "output": "CMakeFiles/HexWizardry.dir/ui/src/MainWindow.cpp.o"
+},
+{
+  "directory": "/home/hodc/Documents/code/c++/HexWizardry/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -g -std=gnu++17 -o CMakeFiles/HexWizardry.dir/ui/src/HexModel.cpp.o -c /home/hodc/Documents/code/c++/HexWizardry/ui/src/HexModel.cpp",
+  "file": "/home/hodc/Documents/code/c++/HexWizardry/ui/src/HexModel.cpp",
+  "output": "CMakeFiles/HexWizardry.dir/ui/src/HexModel.cpp.o"
+},
+{
+  "directory": "/home/hodc/Documents/code/c++/HexWizardry/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/hodc/Documents/code/c++/HexWizardry/build/HexWizardry_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -g -std=gnu++17 -o CMakeFiles/HexWizardry.dir/ui/src/HexView.cpp.o -c /home/hodc/Documents/code/c++/HexWizardry/ui/src/HexView.cpp",
+  "file": "/home/hodc/Documents/code/c++/HexWizardry/ui/src/HexView.cpp",
+  "output": "CMakeFiles/HexWizardry.dir/ui/src/HexView.cpp.o"
+}
+]
